@@ -1,7 +1,17 @@
 Folder structure
-C:\Users\user\Desktop\PO_Expense
+C:\Users\user\Desktop\ESQ
 
-C:\Users\user\Desktop\PO_Expense\PO_Detail_2Dec2021_old.xlsx
-C:\Users\user\Desktop\PO_Expense\PO_Detail_14Jan2022_new.xlsx
+C:\Users\user\Desktop\ESQ\ZPTSANIMAL\ZPTSANIMAL_MAT_AMG162
+C:\Users\user\Desktop\ESQ\ZPTSANIMAL\ZPTSANIMAL_MAT_AMG334
 
-Input user name (example "jtan07")
+C:\Users\user\Desktop\ESQ\ASR162.xlsx
+C:\Users\user\Desktop\ESQ\ASR334.xlsx
+
+C:\Users\user\Desktop\ESQ\ESQ Material Supplier_P154.xlsx
+C:\Users\user\Desktop\ESQ\IM_Mat_Num.xlsx
+C:\Users\user\Desktop\ESQ\MFG_Name_Location.xlsx
+C:\Users\user\Desktop\ESQ\ESQ Material Supplier Report.xlsx
+
+Input user name (example sng08)
+
+df_common = df1.loc[df1['set1'].isin(df2['set2'])]
