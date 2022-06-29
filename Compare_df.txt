@@ -1,0 +1,38 @@
+import pandas as pd
+
+# Read the file
+data = pd.read_csv("PO_Detail_2Dec2021_old.csv", low_memory=False)
+data_2 = pd.read_csv("PO_Detail_14Jan2022_new.csv", low_memory=False)
+# Output the number of rows
+print("Total rows: {0}".format(len(data)))
+print("Total rows: {0}".format(len(data_2)))
+
+df_1 = pd.DataFrame(data)
+df_2 = pd.DataFrame(data_2)
+
+cols = ['PO Number']
+originalI = pd.Index(df_1[cols])
+newI = pd.Index(df_2[cols])
+
+out = pd.concat([
+    df_1[~originalI.isin(newI)].assign(from_df='Original'),
+    df_2[~newI.isin(originalI)].assign(from_df='New'),    
+])
+print("Total rows: {0}".format(len(out)))
+
+
+import pandas as pd
+
+# Read the file
+data = pd.read_csv("PO_Detail_2Dec2021_test.csv", low_memory=False)
+df_1 = pd.DataFrame(data)
+
+Search_for_These_values = ['M_PM'] #creating list
+
+pattern = '|'.join(Search_for_These_values) # joining list for comparision
+
+IScritical=df_1['Line Description'].str.contains(pattern)
+
+df_1['Budget_Owner'] = IScritical.replace((True,False), ('Mechanical','NO'))
+df_1['Category'] = IScritical.replace((True,False), ('Recurring','NO'))
+
